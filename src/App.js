@@ -3,7 +3,7 @@ import Khachhang from "./pages/Khachhang/Khachhang"
 import User from "./pages/user/User"
 import Login from "./pages/login/Login";
 import ListTour from "./pages/list/ListTour";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/"><Route path="login" element={<Login />} />
             <Route index element={<RequireAuth> <Home /> </RequireAuth>} />
@@ -52,7 +52,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
